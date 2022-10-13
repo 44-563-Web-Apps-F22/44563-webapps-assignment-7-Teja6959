@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html> <head>
+<title> Cycler</title>
+	<style>.flex-container {
+	
+    display: flex;  flex-direction:row;
+
+	  background-color: rgb(241, 228, 44);
+
+}
+
+.flex-container > div 
+{  
+background-color: #1defeb; 
+    margin: 15px;padding:15px;  font-size: 15px;
+}
+
+
+   @media(max-width: 200px)
+
+ { 
+	.flex-container{
+		
+        flex-direction:column;
+        
+		    background-color: rgb(208, 233, 18);
+	
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+	<div class="container" style="text-align:center">
+
+		<div class="container">
+
+		<h1>Tejavardhan yadav builds a cycler</h1>
+
+		</div>
+		<br><input type="text" id="input"><br><br>
+		<div class="flex-container" style="flex-direction:column" id="target">
+
+		  
+            <div class="cycler">row item 1
+
+            </div>   <br>
+		     <div class="cycler">row item 2
+
+
+             </div>  
+		       <div class="cycler">row item 3</div>
+             </div>
+	      <p>
+             Press button to create element.
+            </p>
+	           <button onclick="makeNewDiv()">Add Value
+            </button>
+	          <button onclick="get()">Get</button>
+
+	            <button onclick="spin()">Spin</button>
+
+	             
+                                    </body>
+	
+
+    <script>
+
+		function getRandomInt(min, max) 
+
+        {
+			
+            min = Math.ceil(min);
+
+			    max = Math.floor(max);
+
+			value = Math.floor(Math.random() * (max - min) + min);
+
+			return value
+        }
+		function makeNewDiv() 
+        
+        {
+			
+            var input = document.getElementById('input').value;
+
+			     let element = document.createElement("div")
+
+			  element.className = 'cycler'
+
+			   element.innerHTML = input
+
+			    element.style.color = "orange"
+
+			       let container = document.getElementById('target')
+
+			          container.appendChild(element)
+
+		}
+
+		function get()
+         {
+			      var cyclerItem = document.getElementsByClassName('cycler')
+			if (cyclerItem.length > 0) 
+            {
+				
+                cyclerItem[cyclerItem.length - 1].remove()
+
+			}
+		
+        }
+
+	     
+        function spin() 
+        {
+			
+            
+            let container = document.getElementById('target')
+
+			    var cyclerItem = document.getElementsByClassName('cycler')
+
+			if (cyclerItem.length > 1)
+             {
+			
+                   var lastItem = cyclerItem[cyclerItem.length - 1]
+
+				     cyclerItem[cyclerItem.length - 1].remove()
+
+				       container.insertBefore(lastItem, container.firstElementChild)
+		
+                    }
+	 	}
+         
+	</script>
+</html>
