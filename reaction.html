@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Reaction page </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<!-- part5 -->
+
+<body>
+    <div class="container">
+        <h2 style="color:rgb(148, 71, 255)"> Teja Vardhan kallur Reaction timer</h2>
+
+
+        <div class="first-button">
+
+            <button type="button" class="btn btn-success" onclick="startTime()"> Start Timer<br></button>
+
+            <p
+             id="target">Your time</p>  </div>
+
+        <div class="second-button">
+
+            <button type="button" class="btn btn-primary" onclick="recordReact()">React now <br> </button>
+
+            <p id="countdown"> Count</p> </div>
+
+        <script>
+            var myTime = undefined
+            function recordReact() 
+            {
+
+                myTime = Date.now()
+
+                console.log(myTime)
+
+            }
+
+                       
+           
+        </script>
+
+</body>
+
+</html>
